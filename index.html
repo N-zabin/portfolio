@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mehezabin Maria | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ICON LIBRARY -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+line-height:1.7;
+}
+
+section{
+padding:80px 10%;
+}
+
+h2{
+color:#3b82f6;
+margin-bottom:25px;
+}
+
+/* NAVBAR */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 10%;
+background:#020617;
+position:sticky;
+top:0;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-size:14px;
+}
+
+nav a:hover{
+color:#3b82f6;
+}
+
+/* HERO */
+.hero{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+text-align:center;
+}
+
+.profile-img{
+width:180px;
+height:180px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #3b82f6;
+box-shadow:0 0 25px rgba(59,130,246,.5);
+}
+
+.hero h1 span{
+color:#3b82f6;
+}
+
+/* SOCIAL ICONS */
+.social-icons{
+margin-top:15px;
+}
+
+.social-icons a{
+color:white;
+font-size:24px;
+margin:0 10px;
+transition:.3s;
+}
+
+.social-icons a:hover{
+color:#3b82f6;
+}
+
+/* CARD */
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:14px;
+margin-top:20px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+/* SKILLS */
+.skill{
+margin:15px 0;
+}
+
+.skill-title{
+display:flex;
+justify-content:space-between;
+}
+
+.bar{
+background:#334155;
+height:8px;
+border-radius:10px;
+margin-top:6px;
+}
+
+.bar span{
+display:block;
+height:100%;
+background:#3b82f6;
+border-radius:10px;
+}
+
+/* BUTTON */
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:8px 18px;
+background:#3b82f6;
+color:white;
+border-radius:6px;
+text-decoration:none;
+font-size:14px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:25px;
+background:#020617;
+margin-top:40px;
+opacity:.8;
+font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+<div><b>Maria.</b></div>
+
+<div>
+<a href="#about">About</a>
+<a href="#education">Academic</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#certifications">Certifications</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+<div>
+<!-- ADD YOUR IMAGE FILE NAME HERE -->
+<img src="profile.jpg" class="profile-img" alt="Mehezabin Maria">
+
+<h1>Mehezabin <span>Maria</span></h1>
+<p>Computer Science Student</p>
+
+<!-- SOCIAL LINKS -->
+<div class="social-icons">
+
+<a href="https://github.com/N-zabin" target="_blank">
+<i class="fa-brands fa-github"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/mehezabin-maria-903381311/" target="_blank">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Me</h2>
+
+<div class="card">
+I am a motivated Computer Science student with a passion for web development,
+artificial intelligence, and software engineering. I have built projects including
+General Store Management System and other web applications.
+
+I enjoy solving real-world problems through technology and continuously improving
+my skills by learning new tools and frameworks. My goal is to become a skilled
+software developer and contribute to innovative projects.
+</div>
+
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+<h2>Education</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>BSc in Computer Science</h3>
+<p>Northern University of Business and Technology, Khulna</p>
+<p>(Expected Graduation: 2027)</p>
+</div>
+
+<div class="card">
+<h3>HSC</h3>
+<p>Khulna Govt Girls College</p>
+<p>GPA: 5.00 (2021)</p>
+</div>
+
+<div class="card">
+<h3>SSC</h3>
+<p>Govt Laboratory High School, Khulna</p>
+<p>GPA: 5.00 (2019)</p>
+</div>
+
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2>Skills</h2>
+
+<div class="skill">
+<div class="skill-title"><span>HTML & CSS</span><span>80%</span></div>
+<div class="bar"><span style="width:80%"></span></div>
+</div>
+
+<div class="skill">
+<div class="skill-title"><span>C++</span><span>90%</span></div>
+<div class="bar"><span style="width:90%"></span></div>
+</div>
+
+<div class="skill">
+<div class="skill-title"><span>Python</span><span>85%</span></div>
+<div class="bar"><span style="width:85%"></span></div>
+</div>
+
+<div class="skill">
+<div class="skill-title"><span>PHP & MySQL</span><span>75%</span></div>
+<div class="bar"><span style="width:75%"></span></div>
+</div>
+
+<div class="skill">
+<div class="skill-title"><span>Graphic Design</span><span>70%</span></div>
+<div class="bar"><span style="width:70%"></span></div>
+</div>
+
+</section>
+
+<!-- PROJECT -->
+<section id="projects">
+<h2>Academic Project</h2>
+
+<div class="card">
+<h3>General Store Management System</h3>
+<p>Developed a system to manage inventory, sales, and customers efficiently.</p>
+<a href="#" class="btn">View Project</a>
+</div>
+
+</section>
+
+<!-- CERTIFICATION -->
+<section id="certifications">
+<h2>Certifications</h2>
+
+<div class="card">
+Python Programming and Data Science Basics — Edge-KU, CSE (2025)
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+
+<div class="card">
+<p>Email: mehezabinmaria122@gmail.com</p>
+<p>Phone: +880 1640-235929</p>
+<p>Address: Government Teachers Training College Campus, Fulbarigate, Khulna-9203</p>
+</div>
+
+</section>
+
+<footer>
+© 2026 Mehezabin Maria — Computer Science Student
+</footer>
+
+</body>
+</html>
