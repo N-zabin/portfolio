@@ -3,323 +3,651 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Mehezabin Maria | Portfolio</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- ICON LIBRARY -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-body{
-background:#0f172a;
-color:white;
-line-height:1.7;
+:root {
+    --bg-dark: #0f172a;
+    --nav-bg: #020617;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+    --text-light: #cbd5e1;
+    --text-muted: #94a3b8;
+    --primary: #3b82f6;
+    --primary-glow: rgba(59, 130, 246, 0.5);
+    --gradient-start: #3b82f6;
+    --gradient-end: #2563eb;
 }
 
-section{
-padding:80px 10%;
+body {
+    background: var(--bg-dark);
+    color: white;
+    line-height: 1.7;
 }
 
-h2{
-color:#3b82f6;
-margin-bottom:25px;
+html {
+    scroll-behavior: smooth;
 }
 
-/* NAVBAR */
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 10%;
-background:#020617;
-position:sticky;
-top:0;
+section {
+    padding: 60px 10%;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:25px;
-font-size:14px;
+h2 {
+    color: var(--primary);
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    border-left: 4px solid var(--primary);
+    padding-left: 15px;
 }
 
-nav a:hover{
-color:#3b82f6;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 10%;
+    background: var(--nav-bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
 }
 
-/* HERO */
-.hero{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:60px;
-flex-wrap:wrap;
-text-align:center;
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+    transition: 0.3s;
+    font-weight: 500;
 }
 
-.profile-img{
-width:180px;
-height:180px;
-border-radius:50%;
-object-fit:cover;
-border:4px solid #3b82f6;
-box-shadow:0 0 25px rgba(59,130,246,.5);
+nav a:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
 }
 
-.hero h1 span{
-color:#3b82f6;
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 60px 10%;
 }
 
-/* SOCIAL ICONS */
-.social-icons{
-margin-top:15px;
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary);
+    box-shadow: 0 0 25px var(--primary-glow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.social-icons a{
-color:white;
-font-size:24px;
-margin:0 10px;
-transition:.3s;
+.profile-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 32px var(--primary-glow);
 }
 
-.social-icons a:hover{
-color:#3b82f6;
+.hero h1 {
+    font-size: 2.5rem;
+    margin-top: 15px;
 }
 
-/* CARD */
-.card{
-background:#1e293b;
-padding:25px;
-border-radius:14px;
-margin-top:20px;
-transition:.3s;
+.hero h1 span {
+    color: var(--primary);
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
-.card:hover{
-transform:translateY(-5px);
+.hero p {
+    color: var(--text-muted);
+    margin-top: 5px;
 }
 
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
+.social-icons {
+    margin-top: 15px;
 }
 
-/* SKILLS */
-.skill{
-margin:15px 0;
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: 0.3s;
+    display: inline-block;
 }
 
-.skill-title{
-display:flex;
-justify-content:space-between;
+.social-icons a:hover {
+    color: var(--primary);
+    transform: translateY(-3px);
 }
 
-.bar{
-background:#334155;
-height:8px;
-border-radius:10px;
-margin-top:6px;
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 14px;
+    margin-top: 20px;
+    transition: 0.3s;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(2px);
 }
 
-.bar span{
-display:block;
-height:100%;
-background:#3b82f6;
-border-radius:10px;
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* BUTTON */
-.btn{
-display:inline-block;
-margin-top:10px;
-padding:8px 18px;
-background:#3b82f6;
-color:white;
-border-radius:6px;
-text-decoration:none;
-font-size:14px;
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:25px;
-background:#020617;
-margin-top:40px;
-opacity:.8;
-font-size:14px;
+.card p {
+    color: var(--text-light);
+    margin-top: 5px;
 }
 
+.card ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.card ul li {
+    color: var(--text-light);
+    margin: 8px 0;
+}
+
+.card small {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.skill {
+    margin: 20px 0;
+}
+
+.skill-title {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.bar {
+    background: var(--border-color);
+    height: 8px;
+    border-radius: 10px;
+    margin-top: 6px;
+    overflow: hidden;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    border-radius: 10px;
+    width: 0%;
+    transition: width 1s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+hr {
+    margin: 0 auto;
+    border: none;
+    height: 1px;
+    background: var(--border-color);
+    width: 80%;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: var(--nav-bg);
+    margin-top: 40px;
+    color: var(--text-muted);
+    font-size: 14px;
+    border-top: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Project Buttons */
+.project-btn {
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 30px;
+    background: transparent;
+    border: 1px solid var(--primary);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-right: 12px;
+    margin-top: 12px;
+    transition: 0.3s;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.project-btn:hover {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+}
+
+/* Contact section icons & links */
+#contact .card p {
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#contact .card i {
+    color: var(--primary);
+    width: 25px;
+    font-size: 1.2rem;
+}
+
+#contact .card a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+#contact .card a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* Activity cards special */
+#activities .card ul li, #certifications .card {
+    list-style-type: none;
+    position: relative;
+    padding-left: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    section {
+        padding: 40px 5%;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 5%;
+    }
+    
+    nav a {
+        margin: 0 12px;
+        font-size: 13px;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    .project-btn {
+        padding: 5px 14px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        margin: 0 8px;
+        font-size: 11px;
+    }
+    
+    .card {
+        padding: 18px;
+    }
+    .project-btn {
+        margin-right: 8px;
+    }
+}
+
+/* Animation for skill bars on view */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeSlideUp 0.5s ease backwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.15s; }
+.card:nth-child(4) { animation-delay: 0.2s; }
+
+/* certificate card styles */
+#certifications .card {
+    margin-bottom: 15px;
+}
 </style>
 </head>
-
 <body>
 
 <!-- NAV -->
 <nav>
-<div><b>Maria.</b></div>
-
-<div>
-<a href="#about">About</a>
-<a href="#education">Academic</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#certifications">Certifications</a>
-<a href="#contact">Contact</a>
-</div>
+    <div><b style="font-size: 1.2rem; background: linear-gradient(135deg,#3b82f6,#a855f7); background-clip:text; -webkit-background-clip:text; color:transparent;">Maria.</b></div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#education">Academic</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#activities">Activities</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+    </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-
-<div>
-<!-- ADD YOUR IMAGE FILE NAME HERE -->
-<img src="profile.jpg" class="profile-img" alt="Mehezabin Maria">
-
-<h1>Mehezabin <span>Maria</span></h1>
-<p>Computer Science Student</p>
-
-<!-- SOCIAL LINKS -->
-<div class="social-icons">
-
-<a href="https://github.com/N-zabin" target="_blank">
-<i class="fa-brands fa-github"></i>
-</a>
-
-<a href="https://www.linkedin.com/in/mehezabin-maria-903381311/" target="_blank">
-<i class="fa-brands fa-linkedin"></i>
-</a>
-
-</div>
-
-</div>
-
+    <div>
+        <img src="profile.jpg" alt="Mehezabin Maria" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?background=3b82f6&color=fff&bold=true&size=180&name=Maria';">
+        <h1>Mehezabin <span>Maria</span></h1>
+        <p>Computer Science Student | Programmer</p>
+        <div class="social-icons">
+            <a href="https://github.com/N-zabin" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mehezabin-maria-903381311/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
 </section>
+
+<hr>
 
 <!-- ABOUT -->
 <section id="about">
-<h2>About Me</h2>
-
-<div class="card">
-I am a motivated Computer Science student with a passion for web development,
-artificial intelligence, and software engineering. I have built projects including
-General Store Management System and other web applications.
-
-I enjoy solving real-world problems through technology and continuously improving
-my skills by learning new tools and frameworks. My goal is to become a skilled
-software developer and contribute to innovative projects.
-</div>
-
+    <h2>About Me</h2>
+    <div class="card">
+        <p>I am a motivated Computer Science student with a passion for web development, artificial intelligence, and software engineering. I enjoy solving real-world problems and continuously improving my skills. Currently exploring competitive programming and building impactful projects. I love turning ideas into elegant digital solutions and thrive in collaborative environments.</p>
+    </div>
 </section>
+
+<hr>
 
 <!-- EDUCATION -->
 <section id="education">
-<h2>Education</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>BSc in Computer Science</h3>
-<p>Northern University of Business and Technology, Khulna</p>
-<p>(Expected Graduation: 2027)</p>
-</div>
-
-<div class="card">
-<h3>HSC</h3>
-<p>Khulna Govt Girls College</p>
-<p>GPA: 5.00 (2021)</p>
-</div>
-
-<div class="card">
-<h3>SSC</h3>
-<p>Govt Laboratory High School, Khulna</p>
-<p>GPA: 5.00 (2019)</p>
-</div>
-
-</div>
+    <h2>Education</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>🎓 BSc in Computer Science</h3>
+            <p>Northern University of Business and Technology, Khulna</p>
+            <p>Expected: 2027</p>
+        </div>
+        <div class="card">
+            <h3>📚 Higher Secondary Certificate (HSC)</h3>
+            <p>Khulna Govt Girls College</p>
+            <p>GPA: 5.00</p>
+            <small>Board: Jessore | Science Group</small>
+        </div>
+        <div class="card">
+            <h3>📖 Secondary School Certificate (SSC)</h3>
+            <p>Govt Laboratory High School</p>
+            <p>GPA: 5.00</p>
+             <small>Board: Jessore | Science Group</small>
+        </div>
+    </div>
 </section>
 
-<!-- SKILLS -->
+<hr>
+
+<!-- SKILLS (with fixed animation script) -->
 <section id="skills">
-<h2>Skills</h2>
-
-<div class="skill">
-<div class="skill-title"><span>HTML & CSS</span><span>80%</span></div>
-<div class="bar"><span style="width:80%"></span></div>
-</div>
-
-<div class="skill">
-<div class="skill-title"><span>C++</span><span>90%</span></div>
-<div class="bar"><span style="width:90%"></span></div>
-</div>
-
-<div class="skill">
-<div class="skill-title"><span>Python</span><span>85%</span></div>
-<div class="bar"><span style="width:85%"></span></div>
-</div>
-
-<div class="skill">
-<div class="skill-title"><span>PHP & MySQL</span><span>75%</span></div>
-<div class="bar"><span style="width:75%"></span></div>
-</div>
-
-<div class="skill">
-<div class="skill-title"><span>Graphic Design</span><span>70%</span></div>
-<div class="bar"><span style="width:70%"></span></div>
-</div>
-
+    <h2>Skills</h2>
+    <div class="card">
+        <div class="skill">
+            <div class="skill-title"><span>HTML & CSS</span><span>80%</span></div>
+            <div class="bar"><span class="skill-fill" data-width="80%"></span></div>
+        </div>
+        <div class="skill">
+            <div class="skill-title"><span>C++</span><span>90%</span></div>
+            <div class="bar"><span class="skill-fill" data-width="90%"></span></div>
+        </div>
+        <div class="skill">
+            <div class="skill-title"><span>Python</span><span>85%</span></div>
+            <div class="bar"><span class="skill-fill" data-width="85%"></span></div>
+        </div>
+        <div class="skill">
+            <div class="skill-title"><span>PHP & MySQL</span><span>75%</span></div>
+            <div class="bar"><span class="skill-fill" data-width="75%"></span></div>
+        </div>
+        <div class="skill">
+            <div class="skill-title"><span>Graphic Design</span><span>70%</span></div>
+            <div class="bar"><span class="skill-fill" data-width="70%"></span></div>
+        </div>
+    </div>
 </section>
 
-<!-- PROJECT -->
+<hr>
+
+<!-- PROJECTS (with LIVE + CODE buttons) -->
 <section id="projects">
-<h2>Academic Project</h2>
-
-<div class="card">
-<h3>General Store Management System</h3>
-<p>Developed a system to manage inventory, sales, and customers efficiently.</p>
-<a href="#" class="btn">View Project</a>
-</div>
-
+    <h2>Projects</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>📦 General Store Management System</h3>
+            <p>Developed a system to manage inventory, sales, and customers efficiently using PHP and MySQL. Includes invoice generation and stock alerts.</p>
+            <small>Tech: JAVA • MySQL • HTML/CSS</small>
+            <div>
+                <a href="#" class="project-btn" target="_blank">🌐 Live Demo</a>
+                <a href="#" class="project-btn" target="_blank">📁 Source Code</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3>📊 Inventory Management System</h3>
+            <p>A comprehensive system for tracking stock levels, orders, sales, and deliveries. Helps businesses manage inventory efficiently with real-time updates and analytics dashboard.</p>
+            <small>Tech: Python • Django • SQLite</small>
+            <div>
+                <a href="#" class="project-btn" target="_blank">🌐 Live Demo</a>
+                <a href="#" class="project-btn" target="_blank">📁 Source Code</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3>🤖 AI Chatbot</h3>
+            <p>An intelligent conversational agent that can answer queries, provide information, and assist users with natural language processing capabilities (rule-based + basic ML integration).</p>
+            <small>Tech: Python</small>
+            <div>
+                <a href="#" class="project-btn" target="_blank">🌐 Live Demo</a>
+                <a href="#" class="project-btn" target="_blank">📁 Source Code</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3>🔬 Research Interests</h3>
+            <ul>
+                <li>🤖 Artificial Intelligence & LLMs</li>
+                <li>📊 Machine Learning for Healthcare</li>
+                <li>🔒 Cybersecurity & Digital Forensics</li>
+                <li>📈 Data Science & Visualization</li>
+            </ul>
+         
+        </div>
+    </div>
 </section>
 
-<!-- CERTIFICATION -->
+<hr>
+
+<!-- ACTIVITIES -->
+<section id="activities">
+    <h2>🎯 Activities</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>🏆 Competitive Programming</h3>
+            <ul>
+                <li>ICPC & IUPC Participant (2024-2025)</li>
+                <li>Active problem solver on Codeforces, Beecrowd, and AtCoder</li>
+               
+            </ul>
+        </div>
+        <div class="card">
+            <h3>🤝 Community & Volunteering</h3>
+            <ul>
+                <li>Student Campus Ambassador - BitFest 2025</li>
+                <li>Active member of NUBTK Coding Club</li>
+                <li>Workshop participant (Web Dev & AI Bootcamp)</li>
+               
+            </ul>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<!-- CERTIFICATIONS & ACHIEVEMENTS -->
 <section id="certifications">
-<h2>Certifications</h2>
-
-<div class="card">
-Python Programming and Data Science Basics — Edge-KU, CSE (2025)
-</div>
-
+    <h2>📜 Certifications & Achievements</h2>
+    <div class="card">
+        🎓 <strong>Python Programming and Data Science Basics</strong> — Edge-KU, CSE (2025) <br>
+        <small>Completed intensive training on pandas, NumPy, and data visualization</small>
+    </div>
+    <div class="card">
+        🏆 <strong>IUPC Certificate</strong> — Inter-University Programming Contest (2025)<br>
+        <small>Participated in competitive programming contest representing university | Ranked top 30%</small>
+    </div>
+    <div class="card">
+        🤝 <strong>Student Campus Ambassador</strong> — BitFest 2025<br>
+        <small>Promoted tech fest across campus • Coordinated with student teams • Assisted in event management & workshops</small>
+    </div>
+    <div class="card">
+        📜 <strong>Responsive Web Design</strong> — freeCodeCamp (2025)<br>
+        <small>Certified in modern CSS Flex/Grid, accessibility, and responsive layouts</small>
+    </div>
 </section>
 
-<!-- CONTACT -->
+<hr>
+
+<!-- CONTACT (with clickable email & phone) -->
 <section id="contact">
-<h2>Contact</h2>
-
-<div class="card">
-<p>Email: mehezabinmaria122@gmail.com</p>
-<p>Phone: +880 1640-235929</p>
-<p>Address: Government Teachers Training College Campus, Fulbarigate, Khulna-9203</p>
-</div>
-
+    <h2>Contact</h2>
+    <div class="card">
+        <p><i class="fa-solid fa-envelope"></i> 
+            <a href="mailto:mehezabinmaria122@gmail.com">mehezabinmaria122@gmail.com</a>
+        </p>
+        <p><i class="fa-solid fa-phone"></i> 
+            <a href="tel:+8801640235929">+880 1640-235929</a>
+        </p>
+        <p><i class="fa-solid fa-location-dot"></i> Government Teachers Training College Campus, Fulbarigate, Khulna-9203</p>
+        <p><i class="fa-regular fa-clock"></i> Available for collaboration & internships</p>
+    </div>
 </section>
 
 <footer>
-© 2026 Mehezabin Maria — Computer Science Student
+    © 2026 Mehezabin Maria — Computer Science Student | Built with <i class="fa-solid fa-heart" style="color:#3b82f6;"></i> 
 </footer>
 
+<!-- SKILL BAR ANIMATION + LINKEDIN FIX -->
+<script>
+    (function() {
+        // Skill bars animation when visible
+        const skillSpans = document.querySelectorAll('.skill-fill');
+        
+        function animateBars() {
+            skillSpans.forEach(span => {
+                const width = span.getAttribute('data-width');
+                if (width && span.style.width !== width) {
+                    span.style.width = width;
+                }
+            });
+        }
+        
+        // Intersection Observer for triggering skill bars
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateBars();
+                        observer.unobserve(skillsSection);
+                    }
+                });
+            }, { threshold: 0.3 });
+            observer.observe(skillsSection);
+        }
+        
+        // fallback: if observer fails or bars not animated, try manual after load
+        window.addEventListener('load', () => {
+            // check if any skill-fill already has width set? if not set from observer but visible
+            const anyFilled = Array.from(skillSpans).some(s => s.style.width && s.style.width !== '0%');
+            if (!anyFilled && skillsSection && skillsSection.getBoundingClientRect().top < window.innerHeight) {
+                animateBars();
+            }
+        });
+        
+        // Fix placeholder image if profile missing
+        const profileImg = document.querySelector('.profile-img');
+        if (profileImg && profileImg.complete && profileImg.naturalWidth === 0) {
+            profileImg.src = 'https://ui-avatars.com/api/?background=3b82f6&color=fff&bold=true&size=180&name=Maria';
+        }
+        profileImg?.addEventListener('error', function() {
+            this.src = 'https://ui-avatars.com/api/?background=3b82f6&color=fff&bold=true&size=180&name=Maria';
+        });
+        
+        // Optional: active nav highlight
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.style.color = '';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.color = '#3b82f6';
+                }
+            });
+        });
+        
+        // Ensure LinkedIn link opens correctly (additional safety)
+        const linkedinLink = document.querySelector('.social-icons a[href*="linkedin"]');
+        if (linkedinLink) {
+            linkedinLink.addEventListener('click', function(e) {
+                // Just to be safe, the href already has correct URL
+                // This ensures no default prevention issues
+                console.log('LinkedIn link clicked - opening profile');
+            });
+        }
+    })();
+</script>
 </body>
 </html>
